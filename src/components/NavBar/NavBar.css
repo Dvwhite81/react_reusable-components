@@ -1,0 +1,88 @@
+:root {
+  --nav-height: 10vh;
+}
+
+#navbar {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  height: var(--nav-height);
+  justify-content: space-evenly;
+  position: relative;
+  width: 100%;
+}
+
+/* List and logo containers */
+.navlist,
+.logo-link_container {
+  display: flex;
+  height: 100%;
+}
+
+/* List items and links */
+.navlink_item {
+  margin: auto;
+}
+
+.navlink_item a {
+  color: whitesmoke;
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navlink_item:hover,
+.logo-link_link:hover {
+  transform: scale(1.2);
+  transition: ease 0.2s;
+}
+
+/* Logo link */
+.logo-link_link {
+  display: flex;
+}
+
+.logo-link_img,
+#nav_dropdown-icon {
+  height: 70%;
+  margin: auto;
+}
+
+/* Dropdown */
+#nav_dropdown-container {
+  height: var(--nav-height);
+  position: absolute;
+  right: 1rem;
+  width: var(--nav-height);
+}
+
+.dropdown-navlist {
+  background-color: black;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  gap: 1rem;
+  padding: 2rem;
+  position: absolute;
+  right: -1rem;
+  top: var(--nav-height);
+  width: fit-content;
+}
+
+#nav_dropdown-icon {
+  background-image: url(/src/assets/images/hamburger-icon-white.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  height: 100%;
+  width: 100%;
+}
+
+#nav_dropdown-icon:hover {
+  background-color: whitesmoke;
+  background-image: url(/src/assets/images/hamburger-icon-black.png);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: ease 0.2s;
+}
