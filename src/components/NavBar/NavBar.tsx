@@ -1,14 +1,32 @@
-import LinkList from './LinkList';
-import LogoLink from './LogoLink';
 import { getLinkLists } from './helpers';
 import { LinkType, LogoLinkType } from './types';
-import './NavBar.css';
 import Dropdown from './Dropdown';
+import LogoLink from './LogoLink';
+import LinkList from './LinkList';
+import './NavBar.css';
 
 interface NavBarProps {
   links: LinkType[]
   logoLink?: LogoLinkType
 }
+
+/* Links are an array of:
+  {
+    label: 'Profile',
+    path: '/profile',
+    side: 'left',
+    element: <Profile />,
+  }
+*/
+
+/* LogoLink:
+  const logoLink = {
+      label: 'Home',
+      path: '/',
+      element: <Home />,
+      imageSrc: Logo,
+  }
+*/
 
 const NavBar = ({ links, logoLink }: NavBarProps) => {
   const { leftLinks, rightLinks, dropdownLinks } = getLinkLists(links);

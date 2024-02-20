@@ -6,7 +6,6 @@ export const getLinkLists = (links: LinkType[]) => {
   const dropdownLinks = [];
 
   for (const link of links) {
-    console.log('link:', link);
     if (link.side === 'left') {
       leftLinks.push(link);
     } else if (link.side === 'right') {
