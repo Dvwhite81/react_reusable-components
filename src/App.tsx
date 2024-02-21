@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Logo from './assets/images/Logo-Circle.png';
 
@@ -9,9 +10,13 @@ import Test1 from './pages/Test1';
 import Test2 from './pages/Test2';
 import Test3 from './pages/Test3';
 import Test4 from './pages/Test4';
+import Modal from './components/Modal/Modal';
+import OpenModalBtn from './components/Modal/OpenModalBtn';
 import './App.css';
 
 function App() {
+  const [modalEffectClass, setModalEffectClass] = useState('');
+
   const logoLink = {
       label: 'Home',
       path: '/',
@@ -70,11 +75,13 @@ function App() {
   });
 
   return (
-    <div className="app">
+    <div className={`app ${modalEffectClass}`}>
       <NavBar links={links} logoLink={logoLink} />
+      <Modal setModalEffectClass={setModalEffectClass} />
+      <OpenModalBtn setModalEffectClass={setModalEffectClass} />
       <Routes>
         {allPages.map((page) => (
-          <Route path={page.path} element={page.element} />
+          <Route key={page.label} path={page.path} element={page.element} />
         ))}
       </Routes>
     </div>
