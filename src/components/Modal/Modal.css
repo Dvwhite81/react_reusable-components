@@ -12,40 +12,44 @@
   --gray-5: #E5E4E2;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
 /* Main Root of index */
 #root {
   background: linear-gradient(to right, var(--blue-5), var(--gray-5));
   height: 100%;
 }
 
-/*
-  All of these 'app' need to be
-  the main App container
-*/
-.app {
-  height: 100vh;
+/* Container for modal and open-modal-btn */
+.whole-modal {
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
-.app.active-modal .modal-content {
+.whole-modal.active-modal .modal-content {
   opacity: 1;
   transform: none;
 }
 
-.app.active-modal .modal {
+.whole-modal.active-modal .modal {
   opacity: 1;
   visibility: visible;
 }
 
-.app.active-modal .modal-effect {
+.whole-modal.active-modal .modal-effect {
   border-radius: 20px;
   box-shadow: -50px 0 200px -50px var(--blue-1), 50px 0 200px -50px var(--gray-1);
 }
 
-.app.active-modal .modal-background {
+.whole-modal.active-modal .modal-background {
   transform: scale(1);
 }
 
-.app.active-modal .modal-background6 {
+.whole-modal.active-modal .modal-background6 {
   transform: scale(8);
 }
 

@@ -75,10 +75,12 @@ function App() {
   });
 
   return (
-    <div className={`app ${modalEffectClass}`}>
+    <div className="app">
       <NavBar links={links} logoLink={logoLink} />
-      <Modal setModalEffectClass={setModalEffectClass} />
-      <OpenModalBtn setModalEffectClass={setModalEffectClass} />
+      <div className={`whole-modal ${modalEffectClass}`}>
+        <Modal setModalEffectClass={setModalEffectClass} />
+        <OpenModalBtn setModalEffectClass={setModalEffectClass} />
+      </div>
       <Routes>
         {allPages.map((page) => (
           <Route key={page.label} path={page.path} element={page.element} />
