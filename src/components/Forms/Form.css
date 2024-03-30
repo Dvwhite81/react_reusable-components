@@ -1,0 +1,93 @@
+:root {
+  --primary-light-hsl: 200, 100%, 91%;
+  --primary-hsl: 200, 100%, 50%;
+  --primary-dark-hsl: 200, 100%, 6%;
+  --success-hsl: 100, 60%, 50%;
+  --error-hsl: 0, 60%, 50%;
+}
+
+.form-container {
+  --color: hsl(var(--primary-dark-hsl), 0.7);
+  background-color: var(--color);
+  border-radius: 1.25rem;
+  box-shadow: 0 0 1rem 0 var(--color);
+  max-width: 600px;
+  padding: 2.5rem 1.875rem;
+  width: 80%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  color: white;
+  font-weight: lighter;
+}
+
+.input-group input {
+  background-color: hsl(var(--primary-light-hsl), 0.3);
+  border: none;
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: lighter;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 0 1px hsl(var(--primary-hsl));
+}
+
+.input-group.success input {
+  box-shadow: 0 0 0 1px hsl(var(--success-hsl));
+}
+
+.input-group.error input {
+  box-shadow: 0 0 0 1px hsl(var(--error-hsl));
+}
+
+.input-group .msg {
+  display: none;
+  font-size: 0.75rem;
+}
+
+.input-group.success .msg,
+.input-group.error .msg {
+  display: block;
+}
+
+.input-group.success .msg {
+  color: hsl(var(--success-hsl));
+}
+
+.input-group.error .msg {
+  color: hsl(var(--error-hsl));
+}
+
+.submit-btn {
+  background-color: hsl(var(--primary-hsl), 0.25);
+  border: 1px solid hsl(var(--primary-hsl));
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  outline: none;
+  padding: 0.5rem 1rem;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: hsl(var(--primary-hsl), 0.4);
+}

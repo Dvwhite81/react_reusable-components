@@ -13,15 +13,17 @@ import Test4 from './pages/Test4';
 import Modal from './components/Modal/Modal';
 import OpenModalBtn from './components/Modal/OpenModalBtn';
 import './App.css';
+import RegisterForm from './components/Forms/RegisterForm';
+import LoginForm from './components/Forms/LoginForm';
 
 function App() {
   const [modalEffectClass, setModalEffectClass] = useState('');
 
   const logoLink = {
-      label: 'Home',
-      path: '/',
-      element: <Home />,
-      imageSrc: Logo,
+    label: 'Home',
+    path: '/',
+    element: <Home />,
+    imageSrc: Logo,
   };
 
   const pages = [
@@ -32,41 +34,50 @@ function App() {
       element: <Profile />,
     },
     {
+      label: 'Register',
+      path: '/register',
+      side: 'left',
+      element: <RegisterForm />,
+    },
+    {
       label: 'Saved',
       path: '/saved',
       side: 'right',
-      element: <Saved />
+      element: <Saved />,
+    },
+    {
+      label: 'Login',
+      path: '/login',
+      side: 'right',
+      element: <LoginForm />,
     },
     {
       label: 'Test1',
       path: '/Test1',
       side: 'dropdown',
-      element: <Test1 />
+      element: <Test1 />,
     },
     {
       label: 'Test2',
       path: '/Test2',
       side: 'dropdown',
-      element: <Test2 />
+      element: <Test2 />,
     },
     {
       label: 'Test3',
       path: '/Test3',
       side: 'dropdown',
-      element: <Test3 />
+      element: <Test3 />,
     },
     {
       label: 'Test4',
       path: '/Test4',
       side: 'dropdown',
-      element: <Test4 />
+      element: <Test4 />,
     },
   ];
 
-  const allPages = [
-    logoLink,
-    ...pages,
-  ];
+  const allPages = [logoLink, ...pages];
 
   const links = pages.map((page) => {
     const { label, path, side } = page;
