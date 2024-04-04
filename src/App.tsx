@@ -15,6 +15,7 @@ import OpenModalBtn from './components/Modal/OpenModalBtn';
 import './App.css';
 import RegisterForm from './components/Forms/RegisterForm';
 import LoginForm from './components/Forms/LoginForm';
+import CardGrid from './components/Cards/CardGrid';
 
 function App() {
   const [modalEffectClass, setModalEffectClass] = useState('');
@@ -88,10 +89,7 @@ function App() {
   return (
     <div className="app">
       <NavBar links={links} logoLink={logoLink} />
-      <div className={`whole-modal ${modalEffectClass}`}>
-        <Modal setModalEffectClass={setModalEffectClass} />
-        <OpenModalBtn setModalEffectClass={setModalEffectClass} />
-      </div>
+      <CardGrid />
       <Routes>
         {allPages.map((page) => (
           <Route key={page.label} path={page.path} element={page.element} />
