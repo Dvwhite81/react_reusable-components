@@ -1,5 +1,3 @@
-import './Modal.css';
-
 interface ModalProps {
   setModalEffectClass: (value: string) => void
 }

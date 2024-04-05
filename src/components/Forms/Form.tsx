@@ -1,5 +1,4 @@
 import FormInput from './FormInput';
-import './Form.css';
 
 export interface FieldType {
   name: string;

@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import Logo from './assets/images/Logo-Circle.png';
+import { cards } from './utils/data';
 
 import Home from './pages/Home';
 import NavBar from './components/NavBar/NavBar';
 import Profile from './pages/Profile';
 import Saved from './pages/Saved';
-import Test1 from './pages/Test1';
-import Test2 from './pages/Test2';
-import Test3 from './pages/Test3';
-import Test4 from './pages/Test4';
 import Modal from './components/Modal/Modal';
 import OpenModalBtn from './components/Modal/OpenModalBtn';
+import CarouselPage from './pages/CarouselPage';
+import CardGridPage from './pages/CardGridPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import './App.css';
-import RegisterForm from './components/Forms/RegisterForm';
-import LoginForm from './components/Forms/LoginForm';
-import CardGrid from './components/Cards/CardGrid';
 
 function App() {
   const [modalEffectClass, setModalEffectClass] = useState('');
@@ -31,50 +30,38 @@ function App() {
     {
       label: 'Profile',
       path: '/profile',
-      side: 'left',
+      side: 'dropdown',
       element: <Profile />,
-    },
-    {
-      label: 'Register',
-      path: '/register',
-      side: 'left',
-      element: <RegisterForm />,
     },
     {
       label: 'Saved',
       path: '/saved',
-      side: 'right',
+      side: 'dropdown',
       element: <Saved />,
     },
     {
-      label: 'Login',
-      path: '/login',
+      label: 'CarouselPage',
+      path: '/CarouselPage',
+      side: 'left',
+      element: <CarouselPage cards={cards} />,
+    },
+    {
+      label: 'CardGridPage',
+      path: '/CardGridPage',
       side: 'right',
-      element: <LoginForm />,
+      element: <CardGridPage cards={cards} />,
     },
     {
-      label: 'Test1',
-      path: '/Test1',
+      label: 'LoginPage',
+      path: '/LoginPage',
       side: 'dropdown',
-      element: <Test1 />,
+      element: <LoginPage />,
     },
     {
-      label: 'Test2',
-      path: '/Test2',
+      label: 'RegisterPage',
+      path: '/RegisterPage',
       side: 'dropdown',
-      element: <Test2 />,
-    },
-    {
-      label: 'Test3',
-      path: '/Test3',
-      side: 'dropdown',
-      element: <Test3 />,
-    },
-    {
-      label: 'Test4',
-      path: '/Test4',
-      side: 'dropdown',
-      element: <Test4 />,
+      element: <RegisterPage />,
     },
   ];
 
@@ -89,12 +76,19 @@ function App() {
   return (
     <div className="app">
       <NavBar links={links} logoLink={logoLink} />
-      <CardGrid />
-      <Routes>
-        {allPages.map((page) => (
-          <Route key={page.label} path={page.path} element={page.element} />
-        ))}
-      </Routes>
+
+      <div className="main-container">
+        <Routes>
+          {allPages.map((page) => (
+            <Route key={page.label} path={page.path} element={page.element} />
+          ))}
+        </Routes>
+      </div>
+
+      <div className={`whole-modal ${modalEffectClass}`}>
+        <Modal setModalEffectClass={setModalEffectClass} />
+        <OpenModalBtn setModalEffectClass={setModalEffectClass} />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,51 @@
+.carousel-outer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: space-between;
+  margin: auto;
+  width: 95vw;
+}
+
+.carousel-inner {
+  display: flex;
+  height: 80%;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 25vw;
+}
+
+.carousel-item.active {
+  left: 50%;
+  transition: left 0.3s ease-in-out;
+}
+
+.carousel-item.left,
+.carousel-item.right {
+  opacity: 0.4;
+}
+
+.carousel-item.left {
+  left: 15%;
+}
+
+.carousel-item.right {
+  left: 85%;
+}
+
+.carousel-item.hidden {
+  display: none;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}

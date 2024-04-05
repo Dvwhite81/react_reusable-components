@@ -3,11 +3,10 @@ import { LinkType, LogoLinkType } from './types';
 import Dropdown from './Dropdown';
 import LogoLink from './LogoLink';
 import LinkList from './LinkList';
-import './NavBar.css';
 
 interface NavBarProps {
-  links: LinkType[]
-  logoLink?: LogoLinkType
+  links: LinkType[];
+  logoLink?: LogoLinkType;
 }
 
 /* Links are an array of:
@@ -33,12 +32,12 @@ const NavBar = ({ links, logoLink }: NavBarProps) => {
 
   return (
     <nav id="navbar">
-      <LinkList side='left' links={leftLinks} />
+      <LinkList side="left" links={leftLinks} />
       {logoLink && <LogoLink logoLink={logoLink} />}
-      <LinkList side='right' links={rightLinks} />
+      <LinkList side="right" links={rightLinks} />
       <Dropdown dropdownLinks={dropdownLinks} />
     </nav>
-  )
-}
+  );
+};
 
 export default NavBar;

@@ -1,9 +1,4 @@
-export interface CardType {
-  hasImage: boolean;
-  imgSrc?: string;
-  headerText?: string;
-  bodyText: string;
-}
+import { CardType } from '../../utils/data';
 
 interface CardProps {
   card: CardType;

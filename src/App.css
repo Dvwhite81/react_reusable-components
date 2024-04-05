@@ -1,0 +1,18 @@
+@import url('./components/NavBar/NavBar.css');
+@import url('./components/Cards/Cards.css');
+@import url('./components/Carousel/Carousel.css');
+@import url('./components/Modal/Modal.css');
+@import url('./components/Forms/Form.css');
+
+.main-container {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
